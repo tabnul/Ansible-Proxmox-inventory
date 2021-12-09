@@ -257,7 +257,7 @@ class ProxmoxAPI(object):
                                 # IP address validation
                                 if socket.inet_aton(ip_address['ip-address']):
                                     # Ignore localhost
-                                    if ip_address['ip-address'] != '127.0.0.1':
+                                    if '10.100' in ip_address['ip-address']:
                                         system_info.ip_address = ip_address['ip-address']
                             except socket.error:
                                 pass
